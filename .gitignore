@@ -1,1 +1,14 @@
+*.dll
+*.exe
+*.idb
+*.lib
+*.log
+*.obj
+*.pch
+*.tlog
 *.sdf
+*.suo
+*.user
+.vs/
+Debug/
+x64/
