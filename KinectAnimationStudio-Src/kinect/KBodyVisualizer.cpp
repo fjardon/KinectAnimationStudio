@@ -1,6 +1,17 @@
 #include "KBodyVisualizer.h"
-#include "..\common\stdafx.h"
+
+#include "../common/stdafx.h"
+
 #include <strsafe.h>
+
+// Library containing helpers
+#include "../helpers/Kinect_helpers.h"
+#include "../helpers/FBX_helpers.h"
+#include "../helpers/UI_helpers.h"
+
+
+#include "../kinect2fbx/HierarchyNodeDefinition.h"
+#include "../kinect2fbx/KinectSkeletonMapper.h"
 
 /// <summary>
 /// Constructor

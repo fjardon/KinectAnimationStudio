@@ -5,11 +5,15 @@
 
 #pragma once
 
+#pragma comment(lib,"libfbxsdk.lib")
+#pragma comment(lib,"kinect20.lib")
+#pragma comment(lib, "d2d1")
+#pragma comment(lib, "dwrite")
+
 // Do not define WIN32_LEAN_AND_MEAN to use OPENFILENAME structure
 // #define WIN32_LEAN_AND_MEAN		// Exclude rarely-used stuff from Windows headers
 // Windows Header Files:
 #include <windows.h>
-
 
 
 // C RunTime Header Files
@@ -39,9 +43,6 @@
 
 // DirectD2D -- for visualization
 #include <d2d1.h>
-
-// Library containing helpers
-#include "CommonKinect\CommmonKinect.h"
 
 
 // Safe release for interfaces

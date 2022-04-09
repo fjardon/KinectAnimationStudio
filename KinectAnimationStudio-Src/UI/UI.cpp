@@ -2,6 +2,15 @@
 // UI.CPP : Defines the entry point for the application.
 #include "UI.h"
 
+// Library containing helpers
+#include "../helpers/Kinect_helpers.h"
+#include "../helpers/FBX_helpers.h"
+#include "../helpers/UI_helpers.h"
+
+
+#include "../kinect2fbx/HierarchyNodeDefinition.h"
+#include "../kinect2fbx/KinectSkeletonMapper.h"
+
 
 #define MAX_LOADSTRING 100
 

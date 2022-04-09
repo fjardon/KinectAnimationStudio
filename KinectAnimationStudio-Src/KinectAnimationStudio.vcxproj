@@ -19,14 +19,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
     <UseOfMfc>false</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>false</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -61,6 +61,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;FBXSDK_SHARED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>E:\Kinect\FBXSdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -68,6 +69,7 @@
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>
       </IgnoreSpecificDefaultLibraries>
+      <AdditionalLibraryDirectories>E:\Kinect\FBXSdk\lib\x64\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -80,12 +82,14 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;FBXSDK_SHARED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>E:\Kinect\FBXSdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>false</EnableCOMDATFolding>
       <OptimizeReferences>false</OptimizeReferences>
+      <AdditionalLibraryDirectories>E:\Kinect\FBXSdk\lib\x64\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -94,6 +98,11 @@
     <ClCompile Include="kinect\KBodyVisualizer.cpp" />
     <ClCompile Include="kinect\KinectFrameProcessor.cpp" />
     <ClCompile Include="UI\UI.cpp" />
+    <ClCompile Include="helpers\FBX_helpers.cpp" />
+    <ClCompile Include="helpers\Kinect_Helpers.cpp" />
+    <ClCompile Include="helpers\UI_helpers.cpp" />
+    <ClCompile Include="kinect2fbx\HierarchyNodeDefinition.cpp" />
+    <ClCompile Include="kinect2fbx\KinectSkeletonMapper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\stdafx.h" />
@@ -104,6 +113,13 @@
     <ClInclude Include="kinect\kinect_typedef.h" />
     <ClInclude Include="UI\resource.h" />
     <ClInclude Include="UI\UI.h" />
+    <ClInclude Include="CommmonKinect.h" />
+    <ClInclude Include="helpers\FBX_helpers.h" />
+    <ClInclude Include="helpers\Kinect_helpers.h" />
+    <ClInclude Include="helpers\UI_helpers.h" />
+    <ClInclude Include="helpers\WindowIDS.h" />
+    <ClInclude Include="kinect2fbx\HierarchyNodeDefinition.h" />
+    <ClInclude Include="kinect2fbx\KinectSkeletonMapper.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="UI\About_banner.bmp" />
@@ -111,11 +127,6 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="UI\UI.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CommonKinect\CommonKinect.vcxproj">
-      <Project>{50182805-3d70-46ee-b4cf-01e7a0f5b5b2}</Project>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
